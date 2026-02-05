@@ -4,6 +4,9 @@ import numpy as np
 
 mp_face_mesh = mp.solutions.face_mesh
 
+print("MediaPipe loaded from:", mp.__file__)
+print("Has solutions:", hasattr(mp, "solutions"))
+
 class ReconocedorFacial:
     def __init__(self):
         self.face_mesh = mp_face_mesh.FaceMesh(
@@ -56,4 +59,3 @@ class ReconocedorFacial:
             "distance": float(distancia)
         }
 
-    
