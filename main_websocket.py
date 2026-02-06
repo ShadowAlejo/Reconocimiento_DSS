@@ -3,6 +3,10 @@ from fastapi.responses import HTMLResponse
 import cv2
 import numpy as np
 import mediapipe as mp
+
+print("mediapipe file:", getattr(mp, "__file__", None))
+print("has solutions:", hasattr(mp, "solutions"))
+
 from collections import deque
 from datetime import datetime
 
