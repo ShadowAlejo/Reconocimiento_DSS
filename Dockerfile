@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN pip show mediapipe
+
+RUN python -c "import mediapipe as mp; print('file', mp.__file__); print('version', getattr(mp,'__version__',None)); print('has_solutions', hasattr(mp,'solutions'))"
+
 COPY . .
 
 CMD ["sh", "-c", "uvicorn main_websocket:app --host 0.0.0.0 --port ${PORT:-8080}"]

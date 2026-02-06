@@ -7,6 +7,13 @@ import mediapipe as mp
 print("mediapipe file:", getattr(mp, "__file__", None))
 print("has solutions:", hasattr(mp, "solutions"))
 
+try:
+    import mediapipe.python.solutions as _sol
+    print("import mediapipe.python.solutions OK")
+except Exception as e:
+    print("import mediapipe.python.solutions FAIL:", repr(e))
+
+
 from collections import deque
 from datetime import datetime
 
